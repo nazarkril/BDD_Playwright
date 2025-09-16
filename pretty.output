@@ -1,0 +1,7 @@
+Feature: Login to SauceDemo # features/login.feature:1
+
+  Scenario: Successful login                             # features/login.feature:3
+    Given the user is on the SauceDemo login page        # features/steps/login_steps.py:8
+    When they enter valid credentials                    # features/steps/login_steps.py:17
+    Then they should be redirected to the inventory page # features/steps/login_steps.py:22
+

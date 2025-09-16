@@ -1,0 +1,12 @@
+<testsuite name="login.Login to SauceDemo" tests="1" errors="0" failures="0" skipped="0" time="2.841017" timestamp="2025-09-15T22:27:34.988932" hostname="LAPTOP-NazarK"><testcase classname="login.Login to SauceDemo" name="Successful login" status="passed" time="2.841017"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Successful login
+    Given the user is on the SauceDemo login page ... passed in 2.043s
+    When they enter valid credentials ... passed in 0.376s
+    Then they should be redirected to the inventory page ... passed in 0.421s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
