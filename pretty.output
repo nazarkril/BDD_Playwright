@@ -1,7 +1,14 @@
-Feature: Login to SauceDemo # features/login.feature:1
+Feature: Remove goods/ Change quantities/ Continue Shopping/ Checkout from the shopping cart page # features/card.feature:1
 
-  Scenario: Successful login                             # features/login.feature:3
-    Given the user is on the SauceDemo login page        # features/steps/login_steps.py:8
-    When they enter valid credentials                    # features/steps/login_steps.py:17
-    Then they should be redirected to the inventory page # features/steps/login_steps.py:22
+  @main
+  Scenario Outline: Remove goods from shopping cart page -- @1.1                        # features/card.feature:39
+    Given the user is logged in                                                         # features/steps/main_page_steps.py:11
+    When the user click "Add to cart" on "Sauce Labs Bolt T-Shirt, Sauce Labs Backpack" # features/steps/main_page_steps.py:18
+      ABORTED: By user (KeyboardInterrupt).
+
+    And the user click on Shopping cart icon                                            # None
+    And the user click "Remove" on "Sauce Labs Bolt T-Shirt" from shopping cart page    # None
+    Then the basket contains "1" item on shopping cart page                             # None
+    And the "Sauce Labs Bolt T-Shirt" is removed from the shopping cart                 # None
+    And the "Sauce Labs Backpack" is added in the shopping cart                         # None
 

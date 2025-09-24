@@ -11,3 +11,9 @@ class InventoryPage(BasePage):
 
     def go_to_cart(self):
         self.cart_icon.click()
+
+    def remove_first_item_from_cart(self):
+        """ToDO: implement removing specific item"""
+        remove_button = self.page.locator("button[id^='remove-']")
+        remove_button.click()
+

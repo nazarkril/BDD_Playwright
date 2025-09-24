@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Behave",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "behave",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PWDEBUG": "0"
+            },
+            "args": [
+                "--no-capture",
+                "--no-capture-stderr",
+                "--no-skipped",
+                "--tags=@main"
+            ]
+        }
+    ]
+}

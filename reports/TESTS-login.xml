@@ -1,10 +1,58 @@
-<testsuite name="login.Login to SauceDemo" tests="1" errors="0" failures="0" skipped="0" time="2.841017" timestamp="2025-09-15T22:27:34.988932" hostname="LAPTOP-NazarK"><testcase classname="login.Login to SauceDemo" name="Successful login" status="passed" time="2.841017"><system-out>
+<testsuite name="login.Login/Logout and user sessions" tests="4" errors="0" failures="0" skipped="0" time="0.0" timestamp="2025-09-24T20:24:13.575574" hostname="LAPTOP-NazarK"><testcase classname="login.Login/Logout and user sessions" name="Successful login" status="untested" time="0"><system-out>
 <![CDATA[
 @scenario.begin
+
+  @main
   Scenario: Successful login
-    Given the user is on the SauceDemo login page ... passed in 2.043s
-    When they enter valid credentials ... passed in 0.376s
-    Then they should be redirected to the inventory page ... passed in 0.421s
+    Given the user is on the SauceDemo login page ... untested in 0.000s
+    When user1 enter valid credentials ... untested in 0.000s
+    Then they should be redirected to the inventory page ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.Login/Logout and user sessions" name="User can proceed add goods to cart after re-login -- @1.1 " status="untested" time="0"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @main
+  Scenario Outline: User can proceed add goods to cart after re-login -- @1.1 
+    Given the user is on the SauceDemo login page ... untested in 0.000s
+    When user1 enter valid credentials ... untested in 0.000s
+    And the user click "Add to cart" on "Sauce Labs Backpack" ... untested in 0.000s
+    And user log out ... untested in 0.000s
+    And user2 enter valid credentials ... untested in 0.000s
+    Then the basket contains "1" item ... untested in 0.000s
+    And the "Sauce Labs Backpack" changed status to "Remove" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.Login/Logout and user sessions" name="Locked out user cannot log in" status="untested" time="0"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @main
+  Scenario: Locked out user cannot log in
+    Given the user is on the SauceDemo login page ... untested in 0.000s
+    When user3 enter valid credentials ... untested in 0.000s
+    Then the error message is "Epic sadface: Sorry, this user has been locked out." ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.Login/Logout and user sessions" name="User1 selected goods User2 cannot see them in the cart" status="untested" time="0"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @main
+  Scenario: User1 selected goods User2 cannot see them in the cart
+    Given the user is on the SauceDemo login page ... untested in 0.000s
+    When user1 enter valid credentials ... untested in 0.000s
+    And the user click "Add to cart" on "Sauce Labs Bike Light" ... untested in 0.000s
+    And user log out ... untested in 0.000s
+    And user2 enter valid credentials ... untested in 0.000s
+    Then the basket contains "0" item ... untested in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
